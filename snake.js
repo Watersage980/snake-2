@@ -48,6 +48,9 @@ function update(){
     context.fillStyle="red";
     context.fillRect(macaX, macaY, blockSize, blockSize);
 
+    context.fillStyle="white";
+    context.fillRect(muroX, muroY, blockSize, blockSize);
+
     if (cobraX == macaX && cobraY == macaY){
         cobraCorpo.push([macaX, macaY]);
         colocaMaca();
