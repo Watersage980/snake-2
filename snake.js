@@ -20,7 +20,8 @@ var macaY;
 
 var gameOver = false;
 
-
+var muroX;
+var muroY;
 
 
 window.onload = function() { //quando carregar roda essa função
@@ -30,6 +31,7 @@ window.onload = function() { //quando carregar roda essa função
     context = board.getContext("2d"); //desenha no campo
 
     colocaMaca();
+    colocaMuro();
     document.addEventListener("keyup", trocaDirecao);
     //update();
     setInterval(update, 1000/10); //cada 0,1 segundos roda update
@@ -49,6 +51,7 @@ function update(){
     if (cobraX == macaX && cobraY == macaY){
         cobraCorpo.push([macaX, macaY]);
         colocaMaca();
+        colocaMuro();
     }
 
     for (let i = cobraCorpo.length-1; i>0; i--){
@@ -102,4 +105,9 @@ function trocaDirecao(e){
 function colocaMaca(){ //coloca as maçãs de forma aleatória
     macaX = Math.floor(Math.random() * cols) * blockSize; //random = 0/1; * cols -> 0-30.999999; floor -> 0-30 * blockSize
     macaY = Math.floor(Math.random() * rows) * blockSize;
+}
+
+function colocaMuro(){ //coloca muros de forma aleatória
+    muroX = Math.floor(Math.random() * cols) * blockSize;
+    muroY = Math.floor(Math.random() * rows) * blockSize;
 }
