@@ -20,6 +20,8 @@ var macaY;
 
 var gameOver = false;
 
+var contador;
+
 
 window.onload = function() { //quando carregar roda essa função
     board = document.getElementById("board");
