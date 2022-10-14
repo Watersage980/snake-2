@@ -84,6 +84,11 @@ function update(){
             alert("Game Over");
         }
     }
+
+    if (cobraX == muroX && cobraY == muroY) {
+        gameOver = true;
+        alert("Game Over");
+    }
 }
 
 function trocaDirecao(e){
