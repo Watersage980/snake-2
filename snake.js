@@ -23,6 +23,8 @@ var gameOver = false;
 var muroX;
 var muroY;
 
+//var contador;
+//var nMuros = contador/3;
 
 window.onload = function() { //quando carregar roda essa função
     board = document.getElementById("board");
@@ -54,7 +56,10 @@ function update(){
     if (cobraX == macaX && cobraY == macaY){
         cobraCorpo.push([macaX, macaY]);
         colocaMaca();
+        //contador += 1;
+        //for (contador) {
         colocaMuro();
+        //}
     }
 
     for (let i = cobraCorpo.length-1; i>0; i--){
