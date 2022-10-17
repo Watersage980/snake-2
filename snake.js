@@ -84,15 +84,7 @@ function update(){
         }
     }
 
-    if (cobraX == muroX1 && cobraY == muroY1) {
-        gameOver = true;
-        alert("Game Over");
-    }
-    if (cobraX == muroX2 && cobraY == muroY2) {
-        gameOver = true;
-        alert("Game Over");
-    }
-    if (cobraX == muroX3 && cobraY == muroY3) {
+    if (cobraX == muroX && cobraY == muroY) {
         gameOver = true;
         alert("Game Over");
     }
@@ -124,5 +116,5 @@ function colocaMaca(){ //coloca as maçãs de forma aleatória
 
 function colocaMuro(){ //coloca muros de forma aleatória
 muroX = Math.floor(Math.random() * cols) * blockSize;
-muroY1= Math.floor(Math.random() * rows) * blockSize;
+muroY= Math.floor(Math.random() * rows) * blockSize;
 }
