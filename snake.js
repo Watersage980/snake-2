@@ -23,9 +23,6 @@ var gameOver = false;
 var muroX;
 var muroY;
 
-//var contador;
-//var nMuros = contador/3;
-
 window.onload = function() { //quando carregar roda essa função
     board = document.getElementById("board");
     board.height = rows * blockSize;
@@ -48,18 +45,15 @@ function update(){
     context.fillRect(0, 0, board.width, board.height); //cria o campo
 
     context.fillStyle="red";
-    context.fillRect(macaX, macaY, blockSize, blockSize);
+    context.fillRect(macaX, macaY, blockSize, blockSize); //cria a maçã
 
     context.fillStyle="white";
-    context.fillRect(muroX, muroY, blockSize, blockSize);
+    context.fillRect(muroX, muroY, blockSize, blockSize); //cria o muro
 
-    if (cobraX == macaX && cobraY == macaY){
+    if (cobraX == macaX && cobraY == macaY){ //come a maçã e reseta a maçã e o muro
         cobraCorpo.push([macaX, macaY]);
         colocaMaca();
-        //contador += 1;
-        //for (contador) {
         colocaMuro();
-        //}
     }
 
     for (let i = cobraCorpo.length-1; i>0; i--){
@@ -74,7 +68,7 @@ function update(){
     cobraY += velocidadeY * blockSize;
     context.fillRect(cobraX, cobraY, blockSize, blockSize);
     for (let i = 0; i < cobraCorpo.length; i++){
-        context.fillRect(cobraCorpo[i][0], cobraCorpo[i][1], blockSize, blockSize);
+        context.fillRect(cobraCorpo[i][0], cobraCorpo[i][1], blockSize, blockSize); //faz com que o corpo siga a cabeça
     }
 
     //condições do fim
